@@ -10,19 +10,19 @@ def get_total_count_by_hour_df(hour_df):
 
 # Fungsi untuk menghitung total penyewaan per hari dalam rentang tahun 2011-2012
 def count_by_day_df(day_df):
-    day_df_count_2011 = day_df.query('dteday >= "2011-01-01" and dteday < "2012-12-31"')
+    day_df_count_2011 = day_df.query('dateday >= "2011-01-01" and dteday < "2012-12-31"')
     return day_df_count_2011
 
 # Fungsi untuk menghitung total pelanggan terdaftar per hari
 def total_registered_df(day_df):
-    reg_df = day_df.groupby(by="dteday").agg({"registered": "sum"})
+    reg_df = day_df.groupby(by="dateday").agg({"registered": "sum"})
     reg_df = reg_df.reset_index()
     reg_df.rename(columns={"registered": "register_sum"}, inplace=True)
     return reg_df
 
 # Fungsi untuk menghitung total pelanggan casual per hari
 def total_casual_df(day_df):
-    cas_df = day_df.groupby(by="dteday").agg({"casual": ["sum"]})
+    cas_df = day_df.groupby(by="dateday").agg({"casual": ["sum"]})
     cas_df = cas_df.reset_index()
     cas_df.rename(columns={"casual": "casual_sum"}, inplace=True)
     return cas_df
@@ -94,8 +94,8 @@ for column in datetime_columns:
 # Sidebar untuk rentang tanggal
 with st.sidebar:
     st.header("Pengaturan Rentang Waktu")
-    min_date_day = day_df['dteday'].min()
-    max_date_day = day_df['dteday'].max()
+    min_date_day = day_df['dateday'].min()
+    max_date_day = day_df['dateday'].max()
     start_date, end_date = st.date_input(
         label='Rentang Waktu',
         min_value=pd.to_datetime(min_date_day),
