@@ -52,8 +52,8 @@ def analisis_pukul_peminjaman(hour_df):
 
 
 # Membaca data dari file CSV
-day_df = pd.read_csv(r"C:\Users\USER\Documents\Proyek Akhir\data\day_data.csv")
-hour_df = pd.read_csv(r"C:\Users\USER\Documents\Proyek Akhir\data\hour_data.csv")
+day_df = pd.read_csv("day_data.csv")
+hour_df = pd.read_csv("hour_data.csv")
 
 # Melakukan penyesuaian pada kolom datetime
 datetime_columns = ["dateday"]
