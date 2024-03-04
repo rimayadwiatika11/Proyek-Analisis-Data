@@ -82,11 +82,11 @@ def analisis_pukul_peminjaman(hour_df):
     st.write("Terlihat bahwa peminjaman sepeda meningkat pada pukul 17.00.")
 
 # Membaca data dari file CSV
-day_df = pd.read_csv("/path/to/Proyek Akhir/dashboard/day_data.csv")
-hour_df = pd.read_csv("/path/to/Proyek Akhir/dashboard/hour_data.csv")
+day_df = pd.read_csv("day_data.csv")
+hour_df = pd.read_csv("hour_data.csv")
 
 # Melakukan penyesuaian pada kolom datetime
-datetime_columns = ["dteday"]
+datetime_columns = ["dateday"]
 for column in datetime_columns:
     day_df[column] = pd.to_datetime(day_df[column])
     hour_df[column] = pd.to_datetime(hour_df[column])
@@ -104,8 +104,8 @@ with st.sidebar:
     )
 
 # Filter data berdasarkan rentang tanggal yang dipilih
-main_df_day = day_df[(day_df["dteday"] >= start_date) & (day_df["dteday"] <= end_date)]
-main_df_hour = hour_df[(hour_df["dteday"] >= start_date) & (hour_df["dteday"] <= end_date)]
+main_df_day = day_df[(day_df["dateday"] >= start_date) & (day_df["dateday"] <= end_date)]
+main_df_hour = hour_df[(hour_df["dateday"] >= start_date) & (hour_df["dateday"] <= end_date)]
 
 # Visualisasi 1: Grafik Perkiraan Peminjaman Berdasarkan Cuaca
 st.header("Grafik Perkiraan Peminjaman Berdasarkan Cuaca")
