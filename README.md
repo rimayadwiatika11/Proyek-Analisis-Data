@@ -1,6 +1,6 @@
 # **PROYEK ANALISIS DATA**
 ## __Shared Bicycle Rental__
-_____________________________________________
+
 ### Library :
 - import pandas as pd
 - import numpy as np
@@ -8,14 +8,14 @@ _____________________________________________
 - import seaborn as sns
 - import streamlit as st
 _____________________________________________
-### Instal dashboard
+### Jalankan dashboard.py
 - Install library yang dibutuhkan
   <pre><code>pip install numpy pandas scipy matplotlib seaborn</code></pre>
 - Install streamlit
   <pre><code>pip install streamlit</code></pre>
 - Clone repository
-  <pre><code>pip install streamlit</code></pre>
+  <pre><code>git clone https://github.com/rimayadwiatika11/Proyek-Analisis-Data.git</code></pre>
 - Masuk ke direktori yang sudah di clone
   <pre><code>cd Proyek-Analisis-Data</code></pre>
-  - Running dashboard
+- Running dashboard
   <pre><code>streamlit run dashboard.py</code></pre>
